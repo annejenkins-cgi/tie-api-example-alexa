@@ -126,7 +126,7 @@ async function handleAlexaMessage(alexaMessage, userID) {
       'text': alexaMessage,
       'channel':'amazon-alexa'
    });
-   
+   console.log("Input: " + alexaMessage);
    teneoTextReply = teneoResponse.output.text
    console.log(`teneoResponse: ${teneoTextReply}`)
 
