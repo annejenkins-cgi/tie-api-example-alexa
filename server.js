@@ -120,6 +120,8 @@ async function handleAlexaMessage(alexaMessage, userID) {
 
    // check if there's an engine sessionid for this caller
    const teneoSessionId = sessionHandler.getSession(userID);
+   
+   console.log("Input: " + alexaMessage);
 
    // send input to engine using stored sessionid and retreive response
    const teneoResponse = await teneoApi.sendInput(teneoSessionId, {
