@@ -50,6 +50,11 @@ const sessionHandler = SessionHandler();
 function buildAlexaResponse(outputText, shouldEndSession){
 
    var outputSpeechValue = {}
+   
+   if ((typeof outputText == 'undefined' || !outputText || outputText.length === 0 || outputText === "" || !/[^\s]/.test(outputText) || /^\s*$/.test(outputText) || outputText.replace(/\s/g,"") === "")){
+         outputText = "I'm sorry. I am not sure I entirely understood.  Please can you repeat your enquiry.";
+   }
+   
    if (!(typeof outputText == 'undefined' || !outputText || outputText.length === 0 || outputText === "" || !/[^\s]/.test(outputText) || /^\s*$/.test(outputText) || outputText.replace(/\s/g,"") === "")){
       //construct json if the outputText is a valid string
       outputSpeechValue = {
